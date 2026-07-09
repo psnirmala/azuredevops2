@@ -8,5 +8,8 @@ strategy:
     mac:
       operatingSystem: 'macos-latest'
 
+pool:
+ vmImage: '$(operatingSystem)'
+
 steps:
   - bash: echo "Do the build $(operatingSystem)"
