@@ -1,5 +1,5 @@
 trigger:
-- master
+- main
 
 strategy:
   matrix:
@@ -9,4 +9,4 @@ strategy:
       operatingSystem: 'macos-latest'
 
 steps:
-  - bash: echo "Do the build"
+  - bash: echo "Do the build $(operatingSystem)"
