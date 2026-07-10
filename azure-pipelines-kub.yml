@@ -14,4 +14,19 @@ jobs:
     - script: echo Hello, world!--updated
       displayName: 'Run a one-line script'
       
-    
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes/'
+        backendServiceArm: 'test-res-con'
+        backendAzureRmResourceGroupName: 'terraform-backend-rg'
+        backendAzureRmStorageAccountName: 'storageaccsubaxyz'
+        backendAzureRmContainerName: 'subcontainer1'
+        backendAzureRmKey: 'kubdef.tfstate'
+        commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFile)'
+
+    - task: DownloadSecureFile@1
+      name: publickey
+      inputs:
+        secureFile: 'id_rsa.pub'
