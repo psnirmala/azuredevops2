@@ -25,9 +25,9 @@ jobs:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes/'
         backendServiceArm: 'test-res-con'
-        backendAzureRmResourceGroupName: 'terraform-backend-rg'
+        backendAzureRmResourceGroupName: 'DefaultResourceGroup-EUS'
         backendAzureRmStorageAccountName: 'storageaccsubaxyz'
-        backendAzureRmContainerName: 'subcontainer1'
+        backendAzureRmContainerName: 'testcontainer'
         backendAzureRmKey: 'kubdef.tfstate'
         commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFile)'
 
