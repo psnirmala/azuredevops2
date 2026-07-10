@@ -24,12 +24,12 @@ jobs:
         provider: 'azurerm'
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes/'
+        commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFile)'
         backendServiceArm: 'test-res-con'
         backendAzureRmResourceGroupName: 'user127_1_rg'
         backendAzureRmStorageAccountName: 'armaccyeqfjho233kdq'
         backendAzureRmContainerName: 'testcontainer'
         backendAzureRmKey: 'kubdef.tfstate'
-        commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFile)'
 
     - task: DownloadSecureFile@1
       name: publickey
