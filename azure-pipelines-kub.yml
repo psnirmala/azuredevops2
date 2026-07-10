@@ -13,7 +13,12 @@ jobs:
   steps:
     - script: echo Hello, world!--updated
       displayName: 'Run a one-line script'
-      
+          
+    - task: TerraformInstaller@1
+      displayName: 'Install Terraform'
+      inputs:
+        terraformVersion: 'latest' # Or a pinned version like '1.5.0'
+
     - task: TerraformTask@5
       inputs:
         provider: 'azurerm'
