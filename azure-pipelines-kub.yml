@@ -25,7 +25,7 @@ jobs:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes/'
         backendServiceArm: 'test-res-con'
-        backendAzureRmResourceGroupName: 'test-grp'
+        backendAzureRmResourceGroupName: 'user127_rg'
         backendAzureRmStorageAccountName: 'storageaccsubaxyz'
         backendAzureRmContainerName: 'testcontainer'
         backendAzureRmKey: 'kubdef.tfstate'
