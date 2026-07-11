@@ -41,7 +41,7 @@ jobs:
         command: 'apply'
         workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes/'
         commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFile)'
-        backendServiceArm: 'test-res-con'
+        environmentServiceNameAzureRM: 'test-res-con'
       env:
         ARM_SAS_TOKEN: 'sp=racwdl&st=2026-07-11T00:17:12Z&se=2026-07-13T08:32:12Z&sv=2026-02-06&sr=c&sig=nG6BW%2F1d2MR1lEDo3xk7w6k%2BP4xBzJyZYdj6nq7iPps%3D'
 
